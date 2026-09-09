@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz Instructions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='instruction.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz Instructions</h1>
+    <p>Please read the instructions carefully before starting the quiz:</p>
+    <ul>
+      <li>The quiz contains <b>10 questions</b>.</li>
+      <li>You will have <b>15 minutes</b> to complete the quiz.</li>
+      <li>Each correct answer awards <b>1 mark</b>.</li>
+      <li>No negative marking for wrong answers.</li>
+      <li>Do not refresh or close the browser during the quiz.</li>
+      <li>Click the <b>Submit</b> button after completing all questions.</li>
+    </ul>
+    <button class="btn" onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <script>
+    function startQuiz() {
+      // Redirect to quiz page using Flask route
+      window.location.href = "{{ url_for('quiz') }}";
+    }
+  </script>
+</body>
+</html>
